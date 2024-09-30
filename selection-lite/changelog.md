@@ -1,5 +1,15 @@
 ### Changelog
 
+#### **1.14** – 30 September 2024
+* Heading: Fixed link url for a custom item link
+
+#### **1.13** – 13 September 2024
+
+* Breadcrumbs: Fixed issue with separator SVG icon color setting not applying correctly
+* Ticker: Fixed issue with separator SVG icon color setting not applying correctly
+* Ticker: Added icon size setting for separator SVG icon
+* Heading: Fixed applying styles for heading
+
 #### **1.12** – 11 July 2024
 
 Fixed plugin security issues.

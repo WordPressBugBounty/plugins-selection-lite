@@ -5,7 +5,7 @@
  * Carefully selected Elementor addons bundle, for building the most awesome websites
  *
  * @encoding        UTF-8
- * @version         1.12
+ * @version         1.14
  * @copyright       (C) 2018-2024 Merkulove ( https://merkulov.design/ ). All rights reserved.
  * @license         GPLv3
  * @contributors    merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev01
@@ -887,7 +887,7 @@ class crawler_elementor extends Widget_Base {
 					'type'      => Controls_Manager::COLOR,
 					
 					'selectors' => [
-						"{{WRAPPER}} .$color_class" => 'color: {{VALUE}} !important;',
+						"{{WRAPPER}} .$color_class" => 'color: {{VALUE}} !important; fill: {{VALUE}};',
 					],
 				]
 			);
@@ -902,7 +902,7 @@ class crawler_elementor extends Widget_Base {
 					'type'      => Controls_Manager::COLOR,
 					
 					'selectors' => [
-						"{{WRAPPER}} .$additional_color_selector" => 'color: {{VALUE}} !important;',
+						"{{WRAPPER}} .$additional_color_selector" => 'color: {{VALUE}} !important; fill: {{VALUE}};',
 					],
 				]
 			);
@@ -972,7 +972,7 @@ class crawler_elementor extends Widget_Base {
 					'type'      => Controls_Manager::COLOR,
 					
 					'selectors' => [
-						"{{WRAPPER}} .$color_hover_class" => 'color: {{VALUE}} !important;',
+						"{{WRAPPER}} .$color_hover_class" => 'color: {{VALUE}} !important; fill: {{VALUE}};',
 					],
 				]
 			);
@@ -986,7 +986,7 @@ class crawler_elementor extends Widget_Base {
 					'type'      => Controls_Manager::COLOR,
 					
 					'selectors' => [
-						"{{WRAPPER}} .$additional_color_hover_selector" => 'color: {{VALUE}} !important;',
+						"{{WRAPPER}} .$additional_color_hover_selector" => 'color: {{VALUE}} !important; fill: {{VALUE}};',
 					],
 				]
 			);
@@ -1326,6 +1326,34 @@ class crawler_elementor extends Widget_Base {
 		] );
 
 		$this->generate_margin_padding_controls( 'section_style_separator', 'mdp-crawler-elementor-ticker-item-separator' );
+
+        $this->add_responsive_control(
+            'separator_icon_size',
+            [
+                'label'      => esc_html__( 'Icon size', 'selection-lite' ),
+                'type'       => Controls_Manager::SLIDER,
+                'size_units' => [ 'px', '%' ],
+                'range'      => [
+                    'px' => [
+                        'min'  => 1,
+                        'max'  => 200,
+                        'step' => 1,
+                    ],
+                    '%'  => [
+                        'min' => 0,
+                        'max' => 100
+                    ],
+                ],
+                'default'    => [
+                    'unit' => 'px',
+                    'size' => 16,
+                ],
+                'separator'  => 'before',
+                'selectors'  => [
+                    '{{WRAPPER}} .mdp-crawler-elementor-ticker-item-separator' => 'font-size: {{SIZE}}{{UNIT}}; width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
 
 		$this->generate_typography_tabs_controls( 'section_style_separator', 'mdp-crawler-elementor-ticker-item-separator', true,
 			true, true, true, 'mdp-crawler-elementor-ticker-item-separator', 'mdp-crawler-elementor-ticker-item-separator:hover',

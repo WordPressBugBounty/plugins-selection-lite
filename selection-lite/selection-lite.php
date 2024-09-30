@@ -3,7 +3,7 @@
  * Selection Lite
  *
  * @encoding        UTF-8
- * @version         1.12
+ * @version         1.14
  * @copyright       (C) 2018-2024 Merkulove ( https://merkulov.design/ ). All rights reserved.
  * @license         GPLv3
  * @contributors    merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev01
@@ -14,7 +14,7 @@
  * Plugin Name: Selection Lite
  * Plugin URI: https://1.envato.market/selection
  * Description: Carefully selected Elementor addons bundle, for building the most awesome websites
- * Version: 1.12
+ * Version: 1.14
  * Requires at least: 5.0
  * Requires PHP: 7.4
  * Author: Merkulove

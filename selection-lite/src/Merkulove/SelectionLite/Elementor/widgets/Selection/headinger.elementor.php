@@ -5,7 +5,7 @@
  * Carefully selected Elementor addons bundle, for building the most awesome websites
  *
  * @encoding        UTF-8
- * @version         1.12
+ * @version         1.14
  * @copyright       (C) 2018-2024 Merkulove ( https://merkulov.design/ ). All rights reserved.
  * @license         GPLv3
  * @contributors    merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev01
@@ -1188,6 +1188,8 @@ class headinger_elementor extends Widget_Base {
 			]
 		);
 
+        $header_background_effect = $settings['header_background_effect'] === 'yes' ? 'mdp-header-background-effect' : '';
+
 		$valid_tags = [ 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'p' ];
 		$tag        = in_array( $settings['header_tag'], $valid_tags, true ) ? $settings['header_tag'] : 'h2';
 
@@ -1208,7 +1210,7 @@ class headinger_elementor extends Widget_Base {
             <div class="mdp-sub-heading mdp-sub-header-align mdp-subheading-margin">
                 <div class="mdp-sub-header-box">
 					<?php $this->add_inline_editing_attributes( 'sub_heading', 'basic' ); ?>
-                    <div <?php echo esc_attr( $this->get_render_attribute_string( 'sub_heading' ) ); ?>>
+                    <div class="mdp-sub-heading-content mdp-typography-subheader mdp-shadow-subheader mdp-color-sub-header" >
 						<?php echo esc_html( $settings["sub_heading"] ); ?>
                     </div>
 
@@ -1236,13 +1238,13 @@ class headinger_elementor extends Widget_Base {
         <<?php echo esc_attr( $tag ); ?> class="mdp-header-text mdp-header-align">
 
 		<?php if ( ! empty( $url ) ): ?>
-        <a href="<?php echo esc_html( $url ); ?>"
+        <a href="<?php echo esc_url( $url ); ?>"
            class="mdp-color-header" <?php echo esc_attr( $target ); ?> <?php echo esc_attr( $nofollow ); ?>>
 	<?php endif; ?>
 
         <div class="mdp-sub-header-box">
 			<?php $this->add_inline_editing_attributes( 'header_text', 'none' ); ?>
-            <div <?php echo esc_attr( $this->get_render_attribute_string( 'header_text' ) ); ?>>
+            <div class="mdp-typography-header mdp-typography-default-header mdp-shadow-header mdp-heading-margin mdp-headinger-box-style <?php echo esc_attr($header_background_effect) ?>">
 				<?php echo wp_kses( $settings["header_text"], $allowed_html ); ?>
             </div>
 
@@ -1266,7 +1268,7 @@ class headinger_elementor extends Widget_Base {
 
 		<?php $this->add_inline_editing_attributes( 'split_text', 'none' ); ?>
 		<?php if ( $settings["header_split"] === 'yes' ): ?>
-            <div <?php echo esc_attr( $this->get_render_attribute_string( 'split_text' ) ); ?>>
+            <div class="mdp-typography-header mdp-typography-default-header mdp-shadow-header mdp-heading-margin mdp-headinger-box-style mdp-headinger-split-text <?php echo esc_attr($header_background_effect) ?>">
 				<?php echo esc_html( $settings["split_text"] ); ?>
             </div>
 		<?php endif ?>
@@ -1282,7 +1284,7 @@ class headinger_elementor extends Widget_Base {
             <div class="mdp-sub-heading mdp-sub-header-align mdp-subheading-margin">
                 <div class="mdp-sub-header-box">
 					<?php $this->add_inline_editing_attributes( 'sub_heading', 'basic' ); ?>
-                    <div <?php echo esc_attr( $this->get_render_attribute_string( 'sub_heading' ) ); ?>>
+                    <div class="mdp-sub-heading-content mdp-typography-subheader mdp-shadow-subheader mdp-color-sub-header">
 						<?php echo esc_html( $settings["sub_heading"] ); ?>
                     </div>
 

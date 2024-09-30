@@ -5,7 +5,7 @@
  * Carefully selected Elementor addons bundle, for building the most awesome websites
  *
  * @encoding        UTF-8
- * @version         1.12
+ * @version         1.14
  * @copyright       (C) 2018-2024 Merkulove ( https://merkulov.design/ ). All rights reserved.
  * @license         GPLv3
  * @contributors    merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev01
@@ -615,7 +615,7 @@ class crumber_elementor extends Widget_Base {
 					'label'     => esc_html( $style_opts['color_prefix'] . 'Color' ),
 					'type'      => Controls_Manager::COLOR,
 					'selectors' => [
-						"{{WRAPPER}} ." . $style_opts['color_class'] => 'color: {{VALUE}};',
+						"{{WRAPPER}} ." . $style_opts['color_class'] => 'color: {{VALUE}}; fill: {{VALUE}};',
 					],
 				]
 			);
@@ -699,7 +699,7 @@ class crumber_elementor extends Widget_Base {
 					'label'     => esc_html( $style_opts['color_prefix'] . 'Color' ),
 					'type'      => Controls_Manager::COLOR,
 					'selectors' => [
-						"{{WRAPPER}} ." . $style_opts['color_hover_class'] => 'color: {{VALUE}} !important;',
+						"{{WRAPPER}} ." . $style_opts['color_hover_class'] => 'color: {{VALUE}} !important; fill: {{VALUE}}',
 					],
 				]
 			);

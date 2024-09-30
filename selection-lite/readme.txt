@@ -5,7 +5,7 @@ Tags: elementor, header and footer, templates, selection, pack
 Requires at least: 5.0
 Tested up to: 6.6
 Requires PHP: 7.4
-Stable tag: 1.12
+Stable tag: 1.14
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -102,6 +102,17 @@ According to the Envato rules, all products with a regular license can be used o
 You will have full access to the entire library of widgets and templates. The library is updated with new widgets and templates every month. In addition, you will get access to regular updates and new features.
 
 == Changelog ==
+
+= 1.14 = 30 September 2024
+
+* Heading: Fixed link url for a custom item link
+
+= 1.13 = 13 September 2024
+
+* Breadcrumbs: Fixed issue with separator SVG icon color setting not applying correctly
+* Ticker: Fixed issue with separator SVG icon color setting not applying correctly
+* Ticker: Added icon size setting for separator SVG icon
+* Heading: Fixed applying styles for heading
 
 = 1.12 =
 
