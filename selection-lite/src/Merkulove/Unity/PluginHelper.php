@@ -4,7 +4,7 @@
  * Carefully selected Elementor addons bundle, for building the most awesome websites
  *
  * @encoding        UTF-8
- * @version         1.14
+ * @version         1.15
  * @copyright       (C) 2018-2024 Merkulove ( https://merkulov.design/ ). All rights reserved.
  * @license         GPLv3
  * @contributors    merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev01
@@ -186,21 +186,6 @@ final class PluginHelper {
         remove_all_actions( 'all_admin_notices' );
 
 	}
-
-    /**
-     * Loads the plugin translated strings.
-     *
-     * @static
-     * @since 1.0
-     * @access public
-     *
-     * @return void
-     **/
-    public static function load_textdomain() {
-
-        load_plugin_textdomain( 'selection-lite', false, Plugin::get_path() . '/languages/' );
-
-    }
 
 	/**
 	 * Main PluginHelper Instance.

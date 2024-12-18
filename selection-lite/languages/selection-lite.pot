@@ -137,10 +137,6 @@ msgstr ""
 msgid "In the next release"
 msgstr ""
 
-#: wp-content/plugins/selection-lite/src/Merkulove/Unity/CheckCompatibility.php:227
-msgid "The minimum PHP version required for Selection Lite plugin is 7.4.0."
-msgstr ""
-
 #: wp-content/plugins/selection-lite/src/Merkulove/Unity/Plugin.php:249
 msgid "Status"
 msgstr ""

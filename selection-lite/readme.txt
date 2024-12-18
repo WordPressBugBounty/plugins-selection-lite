@@ -3,9 +3,9 @@ Contributors: merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev
 Donate link: https://1.envato.market/selection
 Tags: elementor, header and footer, templates, selection, pack
 Requires at least: 5.0
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 1.14
+Stable tag: 1.15
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -34,7 +34,7 @@ For tutorials visit our [Online Documentation](https://docs.merkulov.design/sele
 * Included pot file for quick translation on any language
 * Perfect for RTL direction
 * Fast and smooth installing
-* Tested and compatible up to WordPress 5+
+* Tested and compatible up to WordPress 6+
 * All major browsers supported Chrome, Firefox, Safari, Opera, and Edge
 * Easy to use and customize with modern User Interface
 * Installation Guide and detailed Users Manual
@@ -102,6 +102,10 @@ According to the Envato rules, all products with a regular license can be used o
 You will have full access to the entire library of widgets and templates. The library is updated with new widgets and templates every month. In addition, you will get access to regular updates and new features.
 
 == Changelog ==
+
+= 1.15 = 18 December 2024
+
+* Improved plugin compatibility with WordPress 6.7
 
 = 1.14 = 30 September 2024
 

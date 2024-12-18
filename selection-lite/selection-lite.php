@@ -3,7 +3,7 @@
  * Selection Lite
  *
  * @encoding        UTF-8
- * @version         1.14
+ * @version         1.15
  * @copyright       (C) 2018-2024 Merkulove ( https://merkulov.design/ ). All rights reserved.
  * @license         GPLv3
  * @contributors    merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev01
@@ -14,7 +14,7 @@
  * Plugin Name: Selection Lite
  * Plugin URI: https://1.envato.market/selection
  * Description: Carefully selected Elementor addons bundle, for building the most awesome websites
- * Version: 1.14
+ * Version: 1.15
  * Requires at least: 5.0
  * Requires PHP: 7.4
  * Author: Merkulove
@@ -22,7 +22,7 @@
  * License: GPLv3
  * Text Domain: selection-lite
  * Domain Path: /languages
- * Tested up to: 6.5
+ * Tested up to: 6.7
  **/
 
 namespace Merkulove;
@@ -39,6 +39,7 @@ require __DIR__ . '/src/autoload.php';
 
 use Merkulove\SelectionLite\Caster;
 use Merkulove\SelectionLite\Config;
+use Merkulove\SelectionLite\Unity\Plugin;
 use Merkulove\SelectionLite\Unity\Unity;
 
 /**
@@ -70,8 +71,13 @@ final class SelectionLite {
      **/
     private function __construct() {
 
-        /** Initialize Unity and Main variables. */
-        Unity::get_instance();
+	    /** Load the plugin text domain for translation. */
+	    $wp_version = get_bloginfo( 'version' );
+	    version_compare( $wp_version, '6.7', '>=' ) ?
+		    add_action( 'init', function () {
+			    load_plugin_textdomain( 'selection-lite', false, '/selection-lite/languages/' );
+		    } ) :
+		    load_plugin_textdomain( 'selection-lite', false, Plugin::get_path() . '/languages/' );
 
     }
 
@@ -85,17 +91,24 @@ final class SelectionLite {
 	 **/
 	public function setup() {
 
-        /** Do critical compatibility checks and stop work if fails. */
-		if ( ! Unity::get_instance()->initial_checks( ['php56'] ) ) { return; }
+		add_action( 'init', function () {
 
-        /** Prepare custom plugin settings. */
-        Config::get_instance()->prepare_settings();
+			/** Do critical compatibility checks and stop work if fails. */
+			if ( ! Unity::get_instance()->initial_checks( ['php56'] ) ) { return; }
 
-		/** Setup the Unity. */
-        Unity::get_instance()->setup();
+			/** Initialize Unity and Main variables. */
+			Unity::get_instance();
 
-        /** Custom setups for plugin. */
-        Caster::get_instance()->setup();
+			/** Prepare custom plugin settings. */
+			Config::get_instance()->prepare_settings();
+
+			/** Setup the Unity. */
+			Unity::get_instance()->setup();
+
+			/** Custom setups for plugin. */
+			Caster::get_instance()->setup();
+
+		} );
 
 	}
 

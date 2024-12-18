@@ -4,7 +4,7 @@
  * Carefully selected Elementor addons bundle, for building the most awesome websites
  *
  * @encoding        UTF-8
- * @version         1.14
+ * @version         1.15
  * @copyright       (C) 2018-2024 Merkulove ( https://merkulov.design/ ). All rights reserved.
  * @license         GPLv3
  * @contributors    merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev01
@@ -224,7 +224,7 @@ final class CheckCompatibility {
         /** If we need to show message in admin area. */
         if ( false === $res && $show_message ) {
 
-            $this->admin_messages[] = esc_html__( 'The minimum PHP version required for Selection Lite plugin is 7.4.0.', 'selection-lite' );
+            $this->admin_messages[] = esc_html( 'The minimum PHP version required for Selection Lite plugin is 7.4.0.' );
 
         }
 

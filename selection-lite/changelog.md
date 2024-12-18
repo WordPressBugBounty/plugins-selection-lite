@@ -1,5 +1,8 @@
 ### Changelog
 
+#### **1.15** – 18 December 2024
+* Improved plugin compatibility with WordPress 6.7
+
 #### **1.14** – 30 September 2024
 * Heading: Fixed link url for a custom item link
 

@@ -4,7 +4,7 @@
  * Carefully selected Elementor addons bundle, for building the most awesome websites
  *
  * @encoding        UTF-8
- * @version         1.14
+ * @version         1.15
  * @copyright       (C) 2018-2024 Merkulove ( https://merkulov.design/ ). All rights reserved.
  * @license         GPLv3
  * @contributors    merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev01
@@ -101,10 +101,6 @@ final class Unity {
 	 * @return void
 	 **/
 	private function both_hooks() {
-
-    	/** Load the plugin text domain for translation. */
-        PluginHelper::load_textdomain();
-
     }
 
 	/**
