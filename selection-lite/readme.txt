@@ -3,9 +3,9 @@ Contributors: merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev
 Donate link: https://1.envato.market/selection
 Tags: elementor, header and footer, templates, selection, pack
 Requires at least: 5.0
-Tested up to: 6.7
+Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.15
+Stable tag: 1.16
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -102,6 +102,11 @@ According to the Envato rules, all products with a regular license can be used o
 You will have full access to the entire library of widgets and templates. The library is updated with new widgets and templates every month. In addition, you will get access to regular updates and new features.
 
 == Changelog ==
+
+= 1.16 = 24 March 2026
+
+* Fixed compatibility with Trustindex plugin
+* Improved plugin compatibility with WordPress 6.9
 
 = 1.15 = 18 December 2024
 

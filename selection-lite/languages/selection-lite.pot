@@ -1,4 +1,4 @@
-# Copyright (C) 2024 Selection Lite
+# Copyright (C) 2026 Selection Lite
 # This file is distributed under the same license as the Selection Lite package.
 msgid ""
 msgstr ""

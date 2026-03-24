@@ -4,7 +4,7 @@
  * Carefully selected Elementor addons bundle, for building the most awesome websites
  *
  * @encoding        UTF-8
- * @version         1.15
+ * @version         1.16
  * @copyright       (C) 2018-2024 Merkulove ( https://merkulov.design/ ). All rights reserved.
  * @license         GPLv3
  * @contributors    merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev01
@@ -199,6 +199,11 @@ final class Elementor {
 
             /** Skip this widget, it cause warning on reinitialisation */
             if ( 'Elementor\Widget_WordPress' === $widget_class ) { continue; }
+
+            /** Check for Trustindex specifically by class name or part of it */
+            if ( strpos( $widget_class, 'Trustrindex' ) !== false ) {
+                continue;
+            }
 
             /** Get widget order. */
             $order = property_exists( $widget_type, 'mdp_order' ) ? $widget_type->mdp_order : 0;

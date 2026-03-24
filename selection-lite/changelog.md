@@ -1,6 +1,10 @@
 ### Changelog
 
-#### **1.15** – 18 December 2024
+#### **1.16** – 24 March 2026
+* Fixed compatibility with Trustindex plugin
+* Improved plugin compatibility with WordPress 6.9
+
+#### **1.15** – 17 December 2024
 * Improved plugin compatibility with WordPress 6.7
 
 #### **1.14** – 30 September 2024
