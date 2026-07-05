@@ -5,8 +5,8 @@
  * Carefully selected Elementor addons bundle, for building the most awesome websites
  *
  * @encoding        UTF-8
- * @version         1.16
- * @copyright       (C) 2018-2024 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @version         1.17
+ * @copyright       (C) 2018-2026 Merkulove ( https://merkulov.design/ ). All rights reserved.
  * @license         GPLv3
  * @contributors    merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev01
  * @support         help@merkulov.design
@@ -1124,6 +1124,7 @@ class pages_elementor extends Widget_Base {
 		the_widget( 'WP_Widget_Pages', [
 			'title'   => esc_attr( $title ),
 			'sortby'  => esc_attr( $settings['pages_sort_by'] ),
+			// phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- User-configurable page exclusion, limited to hand-picked IDs.
 			'exclude' => esc_attr( $exclude_pages )
 		], $default_widget_args );
 

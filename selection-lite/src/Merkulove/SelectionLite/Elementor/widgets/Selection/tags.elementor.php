@@ -5,8 +5,8 @@
  * Carefully selected Elementor addons bundle, for building the most awesome websites
  *
  * @encoding        UTF-8
- * @version         1.16
- * @copyright       (C) 2018-2024 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @version         1.17
+ * @copyright       (C) 2018-2026 Merkulove ( https://merkulov.design/ ). All rights reserved.
  * @license         GPLv3
  * @contributors    merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev01
  * @support         help@merkulov.design
@@ -514,6 +514,7 @@ class tags_elementor extends Widget_Base {
 			];
 
 			if ( $style_opts['exclude_font_size'] ) {
+				// phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- Elementor Group_Control_Typography option, not a WP query parameter.
 				$typography_settings['exclude'] = [ 'font_size' ];
 			}
 

@@ -57,7 +57,7 @@ class TabCustomCSS extends Tab {
 		}
 
 		/** Add code editor for Custom CSS. */
-		wp_enqueue_code_editor( [ 'type' => 'application/x-httpd-php' ] );
+		wp_enqueue_code_editor( [ 'type' => 'text/css' ] );
 
 	}
 
@@ -121,6 +121,7 @@ class TabCustomCSS extends Tab {
 
 			<?php if ( Plugin::get_tabs()['custom_css']['fields']['custom_css']['show_description'] ) :
 				$custom_css_description = apply_filters(
+					// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Hook is prefixed with the plugin slug; renaming would break existing integrations.
 					'selection_lite_custom_css_description',
 					Plugin::get_tabs()['custom_css']['fields']['custom_css']['description']
 				);

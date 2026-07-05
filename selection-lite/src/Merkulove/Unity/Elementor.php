@@ -4,8 +4,8 @@
  * Carefully selected Elementor addons bundle, for building the most awesome websites
  *
  * @encoding        UTF-8
- * @version         1.16
- * @copyright       (C) 2018-2024 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @version         1.17
+ * @copyright       (C) 2018-2026 Merkulove ( https://merkulov.design/ ). All rights reserved.
  * @license         GPLv3
  * @contributors    merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev01
  * @support         help@merkulov.design
@@ -52,7 +52,7 @@ final class Elementor {
         if ( ! did_action( 'elementor/loaded' ) ) { return; }
 
         /** Register custom widgets. */
-        add_action( 'elementor/widgets/widgets_registered', [ $this, 'register_widgets' ] );
+        add_action( 'elementor/widgets/register', [ $this, 'register_widgets' ] );
     }
 
 	/**
@@ -83,7 +83,7 @@ final class Elementor {
                 $widget_class = 'Merkulove\SelectionLite\\' . $widget_class;
 
                 /** Instantiate widget and register it in Elementor. */
-                \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new $widget_class() );
+                \Elementor\Plugin::instance()->widgets_manager->register( new $widget_class() );
 
 			}
 
@@ -129,7 +129,7 @@ final class Elementor {
             $new_order[$widget_class] = $order;
 
             /** Unregister all widgets. */
-            $widgets_manager->unregister_widget_type( $key );
+            $widgets_manager->unregister( $key );
 
         }
 
@@ -138,7 +138,7 @@ final class Elementor {
 
         /** Instantiate widgets in correct order. */
         foreach ( $new_order as $class => $o ) {
-            $widgets_manager->register_widget_type( new $class );
+            $widgets_manager->register( new $class );
         }
 
     }

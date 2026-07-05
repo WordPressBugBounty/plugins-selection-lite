@@ -4,8 +4,8 @@
  * Carefully selected Elementor addons bundle, for building the most awesome websites
  *
  * @encoding        UTF-8
- * @version         1.16
- * @copyright       (C) 2018-2024 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @version         1.17
+ * @copyright       (C) 2018-2026 Merkulove ( https://merkulov.design/ ). All rights reserved.
  * @license         GPLv3
  * @contributors    merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev01
  * @support         help@merkulov.design
@@ -392,7 +392,7 @@ final class Settings {
         if ( isset ( $_GET['tab'] ) ) {
 
 	        if ( isset( $_POST['selection_lite_settings_updated_nonce'] ) ) {
-		        if ( ! wp_verify_nonce( $_POST['selection_lite_settings_updated_nonce'], 'selection-lite-settings-updated' ) ) {
+		        if ( ! wp_verify_nonce( sanitize_key( wp_unslash( $_POST['selection_lite_settings_updated_nonce'] ) ), 'selection-lite-settings-updated' ) ) {
 			        wp_die( 'Nonce verification failed.' );
 		        }
 	        }
@@ -436,7 +436,7 @@ final class Settings {
 		if ( ! isset( $_GET['settings-updated'] ) ) {
 
 			if ( isset( $_POST['selection_lite_settings_updated_nonce'] ) ) {
-				if ( ! wp_verify_nonce( $_POST['selection_lite_settings_updated_nonce'], 'selection-lite-settings-updated' ) ) {
+				if ( ! wp_verify_nonce( sanitize_key( wp_unslash( $_POST['selection_lite_settings_updated_nonce'] ) ), 'selection-lite-settings-updated' ) ) {
 					wp_die( 'Nonce verification failed.' );
 				}
 			}
@@ -460,10 +460,10 @@ final class Settings {
     private function render_nag_saved() {
 
         /** Exit if settings saving was not successful. */
-        if ( 'true' !== $_GET['settings-updated'] ) {
+        if ( ! isset( $_GET['settings-updated'] ) || 'true' !== sanitize_key( wp_unslash( $_GET['settings-updated'] ) ) ) {
 
 	        if ( isset( $_POST['selection_lite_settings_updated_nonce'] ) ) {
-		        if ( ! wp_verify_nonce( $_POST['selection_lite_settings_updated_nonce'], 'selection-lite-settings-updated' ) ) {
+		        if ( ! wp_verify_nonce( sanitize_key( wp_unslash( $_POST['selection_lite_settings_updated_nonce'] ) ), 'selection-lite-settings-updated' ) ) {
 			        wp_die( 'Nonce verification failed.' );
 		        }
 	        }

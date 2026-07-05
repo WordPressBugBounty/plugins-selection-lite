@@ -5,8 +5,8 @@
  * Carefully selected Elementor addons bundle, for building the most awesome websites
  *
  * @encoding        UTF-8
- * @version         1.16
- * @copyright       (C) 2018-2024 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @version         1.17
+ * @copyright       (C) 2018-2026 Merkulove ( https://merkulov.design/ ). All rights reserved.
  * @license         GPLv3
  * @contributors    merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev01
  * @support         help@merkulov.design
@@ -529,7 +529,7 @@ class headinger_elementor extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name'     => 'header_background',
-				'label'    => esc_html__( 'Background', 'plugin-domain' ),
+				'label'    => esc_html__( 'Background', 'selection-lite' ),
 				'types'    => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .mdp-headinger-box-style',
 			]

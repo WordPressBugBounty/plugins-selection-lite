@@ -3,8 +3,8 @@
  * Selection Lite
  *
  * @encoding        UTF-8
- * @version         1.16
- * @copyright       (C) 2018-2024 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @version         1.17
+ * @copyright       (C) 2018-2026 Merkulove ( https://merkulov.design/ ). All rights reserved.
  * @license         GPLv3
  * @contributors    merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev01
  * @support         help@merkulov.design
@@ -14,7 +14,7 @@
  * Plugin Name: Selection Lite
  * Plugin URI: https://1.envato.market/selection
  * Description: Carefully selected Elementor addons bundle, for building the most awesome websites
- * Version: 1.16
+ * Version: 1.17
  * Requires at least: 5.0
  * Requires PHP: 7.4
  * Author: Merkulove
@@ -22,7 +22,7 @@
  * License: GPLv3
  * Text Domain: selection-lite
  * Domain Path: /languages
- * Tested up to: 6.9
+ * Tested up to: 7.0
  **/
 
 namespace Merkulove;
@@ -39,7 +39,6 @@ require __DIR__ . '/src/autoload.php';
 
 use Merkulove\SelectionLite\Caster;
 use Merkulove\SelectionLite\Config;
-use Merkulove\SelectionLite\Unity\Plugin;
 use Merkulove\SelectionLite\Unity\Unity;
 
 /**
@@ -71,13 +70,11 @@ final class SelectionLite {
      **/
     private function __construct() {
 
-	    /** Load the plugin text domain for translation. */
-	    $wp_version = get_bloginfo( 'version' );
-	    version_compare( $wp_version, '6.7', '>=' ) ?
-		    add_action( 'init', function () {
-			    load_plugin_textdomain( 'selection-lite', false, '/selection-lite/languages/' );
-		    } ) :
-		    load_plugin_textdomain( 'selection-lite', false, Plugin::get_path() . '/languages/' );
+	    /**
+	     * Translations are loaded automatically by WordPress (since 4.6)
+	     * for plugins hosted on WordPress.org, so no manual
+	     * load_plugin_textdomain() call is needed.
+	     */
 
     }
 

@@ -4,8 +4,8 @@
  * Carefully selected Elementor addons bundle, for building the most awesome websites
  *
  * @encoding        UTF-8
- * @version         1.16
- * @copyright       (C) 2018-2024 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @version         1.17
+ * @copyright       (C) 2018-2026 Merkulove ( https://merkulov.design/ ). All rights reserved.
  * @license         GPLv3
  * @contributors    merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev01
  * @support         help@merkulov.design
@@ -123,7 +123,7 @@ final class TabGeneral extends Tab {
 
         /** In field haven't custom render check maybe we have standard handler for this field type? */
         if ( ! is_callable( [ $this, 'render_' . $args[ 'type' ] ] ) ) {
-            ?><div class="mdc-system-warn"><?php esc_html_e( 'Handler for this field type not found.' ); ?></div><?php
+            ?><div class="mdc-system-warn"><?php esc_html_e( 'Handler for this field type not found.', 'selection-lite' ); ?></div><?php
             return;
         }
 

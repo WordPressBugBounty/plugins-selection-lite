@@ -4,8 +4,8 @@
  * Carefully selected Elementor addons bundle, for building the most awesome websites
  *
  * @encoding        UTF-8
- * @version         1.16
- * @copyright       (C) 2018-2024 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @version         1.17
+ * @copyright       (C) 2018-2026 Merkulove ( https://merkulov.design/ ). All rights reserved.
  * @license         GPLv3
  * @contributors    merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev01
  * @support         help@merkulov.design
@@ -126,8 +126,51 @@ abstract class Tab {
         if ( null === $tab_slug ) { return; }
 
         /** Status Tab. */
-        register_setting( 'SelectionLite' . $tab_slug . 'OptionsGroup', 'mdp_selection_lite_' . $tab_slug . '_settings' );
+        register_setting(
+            'SelectionLite' . $tab_slug . 'OptionsGroup',
+            'mdp_selection_lite_' . $tab_slug . '_settings',
+            [
+                'type'              => 'array',
+                'sanitize_callback' => [ $this, 'sanitize_settings' ],
+            ]
+        );
         add_settings_section( 'mdp_selection_lite_' . $tab_slug . '_page_status_section', '', null, 'SelectionLite' . $tab_slug . 'OptionsGroup' );
+
+    }
+
+    /**
+     * Sanitize plugin settings before saving.
+     *
+     * @param mixed $settings - Raw settings value.
+     *
+     * @since  1.17
+     * @access public
+     *
+     * @return mixed
+     **/
+    public function sanitize_settings( $settings ) {
+
+        if ( ! is_array( $settings ) ) {
+            return sanitize_text_field( (string) $settings );
+        }
+
+        $sanitized = [];
+        foreach ( $settings as $key => $value ) {
+
+            $key = sanitize_key( $key );
+
+            if ( is_array( $value ) ) {
+                $sanitized[ $key ] = map_deep( $value, 'sanitize_text_field' );
+            } elseif ( 'custom_css' === $key ) {
+                /** Keep valid CSS, strip markup. */
+                $sanitized[ $key ] = wp_strip_all_tags( $value );
+            } else {
+                $sanitized[ $key ] = sanitize_text_field( $value );
+            }
+
+        }
+
+        return $sanitized;
 
     }
 

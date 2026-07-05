@@ -5,8 +5,8 @@
  * Carefully selected Elementor addons bundle, for building the most awesome websites
  *
  * @encoding        UTF-8
- * @version         1.16
- * @copyright       (C) 2018-2024 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @version         1.17
+ * @copyright       (C) 2018-2026 Merkulove ( https://merkulov.design/ ). All rights reserved.
  * @license         GPLv3
  * @contributors    merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev01
  * @support         help@merkulov.design
@@ -430,7 +430,7 @@ class menu_elementor extends Widget_Base {
 			$this->add_control(
 				'navigation_menu',
 				[
-					'label'        => esc_html__( 'Select menu', 'menuar-elementor' ),
+					'label'        => esc_html__( 'Select menu', 'selection-lite' ),
 					'type'         => Controls_Manager::SELECT,
 					'options'      => $menus,
 					'default'      => array_keys( $menus )[0],
@@ -442,7 +442,7 @@ class menu_elementor extends Widget_Base {
 				'navigation_menu_link',
 				[
 					'type'            => Controls_Manager::RAW_HTML,
-					'raw'             => '<strong>' . esc_html__( 'There are no menus in your site.', 'menuar-elementor' ) .
+					'raw'             => '<strong>' . esc_html__( 'There are no menus in your site.', 'selection-lite' ) .
 					                     '</strong><br>' . sprintf( wp_kses_post( 'Go to the <a href="%s" target="_blank">Menus screen</a> to create one.' ),
 							admin_url( 'nav-menus.php?action=edit&menu=0' ) ),
 					'separator'       => 'after',

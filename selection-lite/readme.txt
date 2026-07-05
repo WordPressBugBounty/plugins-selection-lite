@@ -3,9 +3,9 @@ Contributors: merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev
 Donate link: https://1.envato.market/selection
 Tags: elementor, header and footer, templates, selection, pack
 Requires at least: 5.0
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.16
+Stable tag: 1.17
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -102,6 +102,15 @@ According to the Envato rules, all products with a regular license can be used o
 You will have full access to the entire library of widgets and templates. The library is updated with new widgets and templates every month. In addition, you will get access to regular updates and new features.
 
 == Changelog ==
+
+= 1.17 = 5 July 2026
+
+* Improved plugin compatibility with WordPress 7.0
+* Replaced deprecated Elementor widget registration hooks and methods
+* Fixed enqueueing of non-existent assets on the Elementor Templates screen
+* Fixed code editor type for the Custom CSS field
+* Added missing script dependencies for the admin settings script
+* Improved sanitization of nonce verification
 
 = 1.16 = 24 March 2026
 

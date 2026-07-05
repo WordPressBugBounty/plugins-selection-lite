@@ -4,8 +4,8 @@
  * Carefully selected Elementor addons bundle, for building the most awesome websites
  *
  * @encoding        UTF-8
- * @version         1.16
- * @copyright       (C) 2018-2024 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @version         1.17
+ * @copyright       (C) 2018-2026 Merkulove ( https://merkulov.design/ ). All rights reserved.
  * @license         GPLv3
  * @contributors    merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev01
  * @support         help@merkulov.design
@@ -180,7 +180,7 @@ final class Caster {
 		}
 
 		if ( isset( $_POST['selection_lite_settings_updated_nonce'] ) ) {
-			if ( ! wp_verify_nonce( $_POST['selection_lite_settings_updated_nonce'], 'selection-lite-settings-updated' ) ) {
+			if ( ! wp_verify_nonce( sanitize_key( wp_unslash( $_POST['selection_lite_settings_updated_nonce'] ) ), 'selection-lite-settings-updated' ) ) {
 				wp_die( 'Nonce verification failed.' );
 			}
 		}
@@ -201,13 +201,8 @@ final class Caster {
 			$wp_filesystem->mkdir( $directory );
 		}
 
-		try {
-			$wp_filesystem->put_contents( $file_path, Settings::get_instance()->options['custom_css'], FS_CHMOD_FILE );
-		} catch ( \Exception $e ) {
-			if ( WP_DEBUG_LOG ) {
-				error_log( $e->getMessage() );
-			}
-		}
+		/** put_contents() returns false on failure, it does not throw. */
+		$wp_filesystem->put_contents( $file_path, Settings::get_instance()->options['custom_css'], FS_CHMOD_FILE );
 	}
 
 	public function css_file_name() {
@@ -426,14 +421,12 @@ final class Caster {
 
 		// Enqueue styles
 		wp_enqueue_style( 'merkulov-ui', Plugin::get_url() . 'src/Merkulove/Unity/assets/css/merkulov-ui' . Plugin::get_suffix() . '.css', [], Plugin::get_version() );
-		wp_enqueue_style( 'mdp-selection-edit', Plugin::get_url() . 'css/admin-edit' . Plugin::get_suffix() . '.css', [], Plugin::get_version() );
 
 		// Enqueue scripts
 		wp_enqueue_script( 'merkulov-ui', Plugin::get_url() . 'src/Merkulove/Unity/assets/js/merkulov-ui' . Plugin::get_suffix() . '.js', [], Plugin::get_version(), true );
-		wp_enqueue_script( 'mdp-selection-edit', Plugin::get_url() . 'js/assignments' . Plugin::get_suffix() . '.js', [ 'jquery' ], Plugin::get_version(), true );
 
-		/** Add code editor for Custom PHP. */
-		wp_enqueue_code_editor( array( 'type' => 'application/x-httpd-php' ) );
+		/** Add code editor for Custom CSS. */
+		wp_enqueue_code_editor( array( 'type' => 'text/css' ) );
 
 	}
 
@@ -449,10 +442,7 @@ final class Caster {
 		$breadcrumbs = [];
 
 		// check if woocommerce plugin is active
-		$woocommerce_active = false;
-		if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-			$woocommerce_active = true;
-		}
+		$woocommerce_active = class_exists( 'WooCommerce' );
 
 		$page_num = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 

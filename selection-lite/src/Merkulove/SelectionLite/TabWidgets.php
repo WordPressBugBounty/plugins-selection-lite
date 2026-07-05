@@ -4,8 +4,8 @@
  * Carefully selected Elementor addons bundle, for building the most awesome websites
  *
  * @encoding        UTF-8
- * @version         1.16
- * @copyright       (C) 2018-2024 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @version         1.17
+ * @copyright       (C) 2018-2026 Merkulove ( https://merkulov.design/ ). All rights reserved.
  * @license         GPLv3
  * @contributors    merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev01
  * @support         help@merkulov.design
@@ -432,7 +432,7 @@ final class TabWidgets extends Tab {
 
 	        // Render welcome snackbar
 	        UI::get_instance()->render_snackbar(
-                esc_html__( 'Hey ' ) . wp_get_current_user()->user_nicename . esc_html__( '! Manage widgets and settings' ),
+                esc_html__( 'Hey ', 'selection-lite' ) . wp_get_current_user()->user_nicename . esc_html__( '! Manage widgets and settings', 'selection-lite' ),
 		        'info'
 	        );
 
@@ -446,7 +446,7 @@ final class TabWidgets extends Tab {
 		        // Render New widgets snackbar
 		        $new_widgets_count = count( self::$widgets ) - count( self::$widgets_name );
 		        UI::get_instance()->render_snackbar(
-			        $new_widgets_count . esc_html__( ' new widget(s) added. Check the changelog for more.' ),
+			        $new_widgets_count . esc_html__( ' new widget(s) added. Check the changelog for more.', 'selection-lite' ),
 			        'info'
 		        );
 

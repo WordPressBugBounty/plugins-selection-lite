@@ -5,8 +5,8 @@
  * Carefully selected Elementor addons bundle, for building the most awesome websites
  *
  * @encoding        UTF-8
- * @version         1.16
- * @copyright       (C) 2018-2024 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @version         1.17
+ * @copyright       (C) 2018-2026 Merkulove ( https://merkulov.design/ ). All rights reserved.
  * @license         GPLv3
  * @contributors    merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev01
  * @support         help@merkulov.design
@@ -538,7 +538,7 @@ class crawler_elementor extends Widget_Base {
 				'type'        => Controls_Manager::SELECT,
 				'default'     => 'custom',
 				'options'     => $post_types_options,
-				'description' => '<a href="https://1.envato.market/selection" target="_blank">' . esc_html__( 'Get' ) . '</a> ' . esc_html__( 'additional Content types by purchasing the paid version of the ticker' ),
+				'description' => '<a href="https://1.envato.market/selection" target="_blank">' . esc_html__( 'Get', 'selection-lite' ) . '</a> ' . esc_html__( 'additional Content types by purchasing the paid version of the ticker', 'selection-lite' ),
 			]
 		);
 
@@ -868,7 +868,7 @@ class crawler_elementor extends Widget_Base {
 				[
 					'name'     => $section_id . '_typography',
 					'label'    => esc_html__( 'Typography', 'selection-lite' ),
-					
+
 					'selector' => "{{WRAPPER}} .$typography_class",
 				]
 			);
@@ -885,7 +885,7 @@ class crawler_elementor extends Widget_Base {
 				[
 					'label'     => esc_html__( 'Color', 'selection-lite' ),
 					'type'      => Controls_Manager::COLOR,
-					
+
 					'selectors' => [
 						"{{WRAPPER}} .$color_class" => 'color: {{VALUE}} !important; fill: {{VALUE}};',
 					],
@@ -900,7 +900,7 @@ class crawler_elementor extends Widget_Base {
 				[
 					'label'     => esc_html( $additional_color_name ),
 					'type'      => Controls_Manager::COLOR,
-					
+
 					'selectors' => [
 						"{{WRAPPER}} .$additional_color_selector" => 'color: {{VALUE}} !important; fill: {{VALUE}};',
 					],
@@ -970,7 +970,7 @@ class crawler_elementor extends Widget_Base {
 				[
 					'label'     => esc_html__( 'Color', 'selection-lite' ),
 					'type'      => Controls_Manager::COLOR,
-					
+
 					'selectors' => [
 						"{{WRAPPER}} .$color_hover_class" => 'color: {{VALUE}} !important; fill: {{VALUE}};',
 					],
@@ -984,7 +984,7 @@ class crawler_elementor extends Widget_Base {
 				[
 					'label'     => esc_html( $additional_color_name ),
 					'type'      => Controls_Manager::COLOR,
-					
+
 					'selectors' => [
 						"{{WRAPPER}} .$additional_color_hover_selector" => 'color: {{VALUE}} !important; fill: {{VALUE}};',
 					],
@@ -1406,6 +1406,7 @@ class crawler_elementor extends Widget_Base {
 
 		// exclude posts argument
 		if ( ! empty( $settings['exclude'] ) ) {
+			// phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- User-configurable post exclusion, limited to hand-picked IDs.
 			$args['exclude'] = implode( ' ', esc_sql( $settings['exclude'] ) );
 		}
 

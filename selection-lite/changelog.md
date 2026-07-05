@@ -1,5 +1,13 @@
 ### Changelog
 
+#### **1.17** – 5 July 2026
+* Improved plugin compatibility with WordPress 7.0
+* Replaced deprecated Elementor widget registration hooks and methods
+* Fixed enqueueing of non-existent assets on the Elementor Templates screen
+* Fixed code editor type for the Custom CSS field
+* Added missing script dependencies for the admin settings script
+* Improved sanitization of nonce verification
+
 #### **1.16** – 24 March 2026
 * Fixed compatibility with Trustindex plugin
 * Improved plugin compatibility with WordPress 6.9

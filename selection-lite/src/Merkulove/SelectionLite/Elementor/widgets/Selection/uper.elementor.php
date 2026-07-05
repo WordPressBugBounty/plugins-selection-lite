@@ -5,8 +5,8 @@
  * Carefully selected Elementor addons bundle, for building the most awesome websites
  *
  * @encoding        UTF-8
- * @version         1.16
- * @copyright       (C) 2018-2024 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @version         1.17
+ * @copyright       (C) 2018-2026 Merkulove ( https://merkulov.design/ ). All rights reserved.
  * @license         GPLv3
  * @contributors    merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev01
  * @support         help@merkulov.design
@@ -568,7 +568,7 @@ class uper_elementor extends Widget_Base {
 			[
 				'name'     => 'button_title_typography',
 				'label'    => esc_html__( 'Typography', 'selection-lite' ),
-				
+
 				'selector' => '{{WRAPPER}} .mdp-uper-elementor-text-wrapper',
 			]
 		);
@@ -582,7 +582,7 @@ class uper_elementor extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Text color', 'selection-lite' ),
 				'type'      => Controls_Manager::COLOR,
-				
+
 				'selectors' => [
 					'{{WRAPPER}} .mdp-uper-elementor-button-title' => 'color: {{VALUE}}',
 				],
@@ -594,7 +594,7 @@ class uper_elementor extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Icon color', 'selection-lite' ),
 				'type'      => Controls_Manager::COLOR,
-				
+
 				'selectors' => [
 					'{{WRAPPER}} .mdp-uper-elementor-button-icon'     => 'color: {{VALUE}} !important;',
 					'{{WRAPPER}} .mdp-uper-elementor-button-icon svg' => 'fill: {{VALUE}} !important;',
@@ -654,7 +654,7 @@ class uper_elementor extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Text color', 'selection-lite' ),
 				'type'      => Controls_Manager::COLOR,
-				
+
 				'selectors' => [
 					'{{WRAPPER}} .mdp-uper-elementor-button:hover .mdp-uper-elementor-button-title' => 'color: {{VALUE}}',
 				],
@@ -666,7 +666,7 @@ class uper_elementor extends Widget_Base {
 			[
 				'label'     => esc_html__( 'Icon color', 'selection-lite' ),
 				'type'      => Controls_Manager::COLOR,
-				
+
 				'selectors' => [
 					'{{WRAPPER}} .mdp-uper-elementor-button:hover .mdp-uper-elementor-button-icon'     => 'color: {{VALUE}} !important;',
 					'{{WRAPPER}} .mdp-uper-elementor-button:hover .mdp-uper-elementor-button-icon svg' => 'fill: {{VALUE}} !important;',

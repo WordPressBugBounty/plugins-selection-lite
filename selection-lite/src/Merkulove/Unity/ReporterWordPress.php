@@ -4,8 +4,8 @@
  * Carefully selected Elementor addons bundle, for building the most awesome websites
  *
  * @encoding        UTF-8
- * @version         1.16
- * @copyright       (C) 2018-2024 Merkulove ( https://merkulov.design/ ). All rights reserved.
+ * @version         1.17
+ * @copyright       (C) 2018-2026 Merkulove ( https://merkulov.design/ ). All rights reserved.
  * @license         GPLv3
  * @contributors    merkulove, vladcherviakov, phoenixmkua, podolianochka, viktorialev01
  * @support         help@merkulov.design
@@ -34,7 +34,7 @@ final class ReporterWordPress {
 	 * @var ReporterWordPress
 	 **/
 	private static $instance;
-	
+
 	/**
 	 * Get WordPress environment reporter title.
 	 *
@@ -54,7 +54,7 @@ final class ReporterWordPress {
 	 *
      * @since 1.0
 	 * @access public
-     *         
+     *
 	 * @return array Required report fields with field ID and field label.
 	 **/
 	public function get_fields() {
@@ -116,7 +116,7 @@ final class ReporterWordPress {
 	 *
      * @since 1.0
 	 * @access public
-     *         
+     *
 	 * @return array {
 	 *    Report data.
 	 *    @type string $value          WordPress' memory limit.
@@ -153,7 +153,7 @@ final class ReporterWordPress {
 	 *
 	 * @since 1.0
 	 * @access public
-     *         
+     *
 	 * @return array {
 	 *    Report data.
 	 *    @type string $value WordPress version.
@@ -173,7 +173,7 @@ final class ReporterWordPress {
 	 *
      * @since 1.0
 	 * @access public
-     *         
+     *
 	 * @return array {
 	 *    Report data.
 	 *    @type string $value Yes if multisite is enabled, No otherwise.
@@ -193,7 +193,7 @@ final class ReporterWordPress {
 	 *
      * @since 1.0
 	 * @access public
-     *         
+     *
 	 * @return array {
 	 *    Report data.
 	 *    @type string $value WordPress site URL.
@@ -213,7 +213,7 @@ final class ReporterWordPress {
 	 *
      * @since 1.0
 	 * @access public
-     *         
+     *
 	 * @return array {
 	 *    Report data.
 	 *    @type string $value WordPress home URL.
@@ -233,7 +233,7 @@ final class ReporterWordPress {
 	 *
      * @since 1.0
 	 * @access public
-     *         
+     *
 	 * @return array {
 	 *    Report data.
 	 *    @type string $value WordPress permalink structure.
@@ -261,7 +261,7 @@ final class ReporterWordPress {
 	 *
      * @since 1.0
 	 * @access public
-     *         
+     *
 	 * @return array {
 	 *    Report data.
 	 *    @type string $value WordPress site language.
@@ -281,7 +281,7 @@ final class ReporterWordPress {
 	 *
      * @since 1.0
 	 * @access public
-     *         
+     *
 	 * @return array {
 	 *    Report data.
 	 *    @type string $value Maximum upload file size allowed.
@@ -301,7 +301,7 @@ final class ReporterWordPress {
 	 *
      * @since 1.0
 	 * @access public
-     *         
+     *
 	 * @return array {
 	 *    Report data.
 	 *    @type string $value WordPress timezone.
@@ -326,7 +326,7 @@ final class ReporterWordPress {
 	 *
      * @since 1.0
 	 * @access public
-     *         
+     *
 	 * @return array {
 	 *    Report data.
 	 *
@@ -347,7 +347,7 @@ final class ReporterWordPress {
 	 *
      * @since 1.0
 	 * @access public
-     *         
+     *
 	 * @return array {
 	 *    Report data.
 	 *    @type string $value Active if debug mode is enabled, Inactive otherwise.
